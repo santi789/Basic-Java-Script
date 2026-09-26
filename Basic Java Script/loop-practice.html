@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loop Practice - Control Flow</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1b2a;
+      color: #eee;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #4fc3f7;
+    }
+
+    h3 {
+      color: #90ee90;
+      margin-top: 25px;
+    }
+
+    pre {
+      background: #111;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <pre id="output"></pre>
+
+  <script>
+    
+    let maxNumber = 20;
+    let buffer = "";
+
+    for (let i = 0; i <= maxNumber; i++) {
+      if (i % 2 === 0) {
+        buffer += i + " (คู่)\n";
+      } else {
+        buffer += i + " (คี่)\n";
+      }
+    }
+
+    for (let i = 0; i <= maxNumber; i += 2) {
+      buffer += "นับทีละ 2: " + i + "\n";
+    }
+
+    for (let i = 10; i >= 0; i--) {
+      buffer += "ถอยหลัง: " + i + "\n";
+    }
+
+    document.getElementById("output").textContent = buffer;
+    console.log(buffer);
+  </script>
+
+</body>
+
+</html>

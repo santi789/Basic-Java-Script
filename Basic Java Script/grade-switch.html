@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Check - if / else if / else</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d1b2a;
+            color: #eee;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #4fc3f7;
+        }
+
+        #outputBox {
+            background: #111;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            width: fit-content;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>ตรวจสอบเกรด + คำอธิบาย (Switch Statement)</h2>
+    <div id="outputBox"></div>
+
+    <script>
+        let score = Math.floor(Math.random() * 101);
+
+        let grade = "";
+        if (score >= 80) {
+            grade = "A";
+        } else if (score >= 70) {
+            grade = "B";
+        } else if (score >= 60) {
+            grade = "C";
+        } else if (score >= 50) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        let result = (score >= 50) ? "ผ่าน" : "ไม่ผ่าน";
+
+        let comment = "";
+        switch (grade) {
+            case "A":
+                comment = "ยอดเยี่ยมมาก";
+                break;
+            case "B":
+                comment = "ดีมาก รักษามาตรฐานไว้";
+                break;
+            case "C":
+                comment = "ผ่านเกณฑ์ระดับดี";
+                break;
+            case "D":
+                comment = "พอใช้ แต่ควรพัฒนาเพิ่ม";
+                break;
+            case "F":
+                comment = "ต้องลงทะเบียนเรียนใหม่";
+                break;
+            default:
+                comment = "ไม่พบข้อมูลเกรด";
+        }
+
+        document.getElementById("outputBox").innerHTML =
+            "คะแนน: " + score + "<br>" +
+            "เกรด: " + grade + "<br>" +
+            "ผลสอบ: " + result + "<br>" +
+            "คำอธิบาย: " + comment;
+
+        console.log("คะแนน: " + score);
+        console.log("เกรด: " + grade);
+        console.log("ผลสอบ: " + result);
+        console.log("คำอธิบาย: " + comment);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Check - if / else if / else</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1b2a;
+      color: #eee;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #4fc3f7;
+    }
+
+    #output {
+      background: #111;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      width: fit-content;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>ตรวจสอบเกรดจากคะแนนสอบ</h2>
+  <div id="output"></div>
+
+  <script>
+
+    let score = Math.floor(Math.random() * 101);
+    let grade = "";
+
+    if (score >= 80) {
+      grade = "A";
+    } else if (score >= 70) {
+      grade = "B";
+    } else if (score >= 60) {
+      grade = "C";
+    } else if (score >= 50) {
+      grade = "D";
+    } else {
+      grade = "F";
+    }
+
+    let result = "";
+    if (score >= 50) {
+      result = "ผ่าน";
+    } else {
+      result = "ไม่ผ่าน";
+    }
+
+    let display =
+      "คะแนนที่สุ่มได้: " + score + "<br>" +
+      "เกรด: " + grade + "<br>" +
+      "ผลสอบ: " + result + "<br>" +
+      "คําอธิบาย: " + (score >= 50 ? "ยอดเยี่ยมมาก!" : "คุณสอบไม่ผ่าน กรุณาพยายามใหม่");
+
+    document.getElementById("output").innerHTML = display;
+
+    console.log("คะแนนที่สุ่มได้: " + score);
+    console.log("เกรด: " + grade);
+    console.log("ผลสอบ: " + result);
+  </script>
+
+</body>
+
+</html>
